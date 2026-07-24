@@ -1,0 +1,27 @@
+# Secrets
+.env
+**/.env
+
+# Virtual environments
+.venv/
+**/.venv/
+
+# Generated FAC output, caches, and local history
+output/
+**/output/
+*.cache
+*_cache.json
+
+# Python
+__pycache__/
+**/__pycache__/
+*.py[cod]
+
+# Operating systems and editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local archives
+*.zip

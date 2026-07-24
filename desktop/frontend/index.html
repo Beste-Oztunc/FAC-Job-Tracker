@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+    <title>FAC - Job Tracker</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-mark">J</div>
+                <div>
+                    <strong>FAC - Job Tracker</strong>
+                    <span>Personal job search intelligence</span>
+                </div>
+            </div>
+
+            <nav class="step-nav" aria-label="Application sections">
+                <button class="nav-item active" data-section="profile">
+                    <span class="nav-number">1</span>
+                    <span>
+                        <strong>Your profile</strong>
+                        <small>Résumé and target work</small>
+                    </span>
+                </button>
+
+                <button class="nav-item" data-section="companies">
+                    <span class="nav-number">2</span>
+                    <span>
+                        <strong>Companies</strong>
+                        <small>Search universe</small>
+                    </span>
+                </button>
+
+                <button class="nav-item" data-section="rules">
+                    <span class="nav-number">3</span>
+                    <span>
+                        <strong>Scoring rules</strong>
+                        <small>Priorities and exclusions</small>
+                    </span>
+                </button>
+
+                <button class="nav-item" data-section="run">
+                    <span class="nav-number">4</span>
+                    <span>
+                        <strong>Run search</strong>
+                        <small>Collection and AI options</small>
+                    </span>
+                </button>
+
+                <button class="nav-item" data-section="progress">
+                    <span class="nav-number">5</span>
+                    <span>
+                        <strong>Progress</strong>
+                        <small>Live local processing</small>
+                    </span>
+                </button>
+
+                <button class="nav-item" data-section="results">
+                    <span class="nav-number">6</span>
+                    <span>
+                        <strong>Results</strong>
+                        <small>Jobs and intelligence</small>
+                    </span>
+                </button>
+            </nav>
+
+            <div class="privacy-card">
+                <strong>Runs only on this computer</strong>
+                <p>
+                    Your résumé, rules, caches, and API key stay in
+                    your local project folder.
+                </p>
+                <a
+                    class="sidebar-license-link"
+                    href="/license"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Job seeker community license
+                </a>
+            </div>
+        </aside>
+
+        <div class="workspace">
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow">LOCAL APPLICATION</p>
+                    <h1 id="pageTitle">Build your search profile</h1>
+                </div>
+
+                <div class="topbar-actions">
+                    <div
+                        id="apiKeyStatus"
+                        class="status-chip neutral"
+                        title="The key itself is never sent to the browser."
+                    >
+                        Checking API key…
+                    </div>
+                    <button id="saveButton" class="button secondary">
+                        Save settings
+                    </button>
+                </div>
+            </header>
+
+            <main class="content">
+                <div id="globalMessage" class="global-message hidden"></div>
+
+                <section id="profile" class="app-section active">
+                    <div class="section-intro">
+                        <div>
+                            <p class="eyebrow">STEP 1</p>
+                            <h2>Tell the app who it is searching for</h2>
+                            <p>
+                                This information guides the AI intelligence layer.
+                                Deterministic job scoring remains controlled by your
+                                rule configuration.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="panel form-panel">
+                        <label class="field field-large">
+                            <span class="field-label">
+                                Résumé text
+                                <small>Paste the full text. Formatting is not required.</small>
+                            </span>
+                            <textarea
+                                id="resumeText"
+                                rows="18"
+                                placeholder="Paste résumé text here…"
+                            ></textarea>
+                        </label>
+
+                        <div class="field-grid two">
+                            <label class="field">
+                                <span class="field-label">
+                                    Desired jobs
+                                    <small>Free text or comma-separated roles</small>
+                                </span>
+                                <textarea
+                                    id="desiredJobText"
+                                    rows="6"
+                                    placeholder="Solutions Engineer, Risk Consultant, AI Solutions…"
+                                ></textarea>
+                            </label>
+
+                            <label class="field">
+                                <span class="field-label">
+                                    Location preference
+                                    <small>Used by the AI coach and application summary</small>
+                                </span>
+                                <textarea
+                                    id="locationPreference"
+                                    rows="6"
+                                    placeholder="Remote U.S.; Triangle hybrid; open to relocation…"
+                                ></textarea>
+                            </label>
+                        </div>
+
+                        <label class="field">
+                            <span class="field-label">
+                                Additional context
+                                <small>Optional constraints, strengths, visa context, or career direction</small>
+                            </span>
+                            <textarea
+                                id="additionalNotes"
+                                rows="5"
+                                placeholder="Anything the coach should understand…"
+                            ></textarea>
+                        </label>
+                    </div>
+
+                    <div class="section-footer">
+                        <span></span>
+                        <button class="button primary next-button" data-next="companies">
+                            Continue to companies
+                        </button>
+                    </div>
+                </section>
+
+                <section id="companies" class="app-section">
+                    <div class="section-intro">
+                        <div>
+                            <p class="eyebrow">STEP 2</p>
+                            <h2>Choose the company universe</h2>
+                            <p>
+                                The complete registry is available. The core
+                                priority-one set is enabled by default to preserve
+                                fast collection.
+                            </p>
+                        </div>
+                        <div class="stat-stack">
+                            <strong id="enabledCompanyCount">0</strong>
+                            <span>companies enabled</span>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="company-toolbar">
+                            <label class="search-field">
+                                <span aria-hidden="true">⌕</span>
+                                <input
+                                    id="companySearch"
+                                    type="search"
+                                    placeholder="Search companies…"
+                                >
+                            </label>
+
+                            <select id="companyCategory" class="select-control">
+                                <option value="">All categories</option>
+                            </select>
+
+                            <div class="button-group">
+                                <button id="selectCoreCompanies" class="button compact secondary">
+                                    Core list
+                                </button>
+                                <button id="selectAllCompanies" class="button compact secondary">
+                                    All companies
+                                </button>
+                                <button id="clearCompanies" class="button compact ghost">
+                                    Clear
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="companyList" class="company-list"></div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <div>
+                                <h3>Add companies outside the registry</h3>
+                                <p>
+                                    Auto-detect tries the normalized company name
+                                    against Greenhouse, Ashby, and Lever.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="custom-company-form">
+                            <label class="field">
+                                <span class="field-label">Company name</span>
+                                <input id="customCompanyName" type="text" placeholder="Example Corp">
+                            </label>
+
+                            <label class="field">
+                                <span class="field-label">ATS</span>
+                                <select id="customCompanyAts">
+                                    <option value="auto">Auto-detect</option>
+                                    <option value="greenhouse">Greenhouse</option>
+                                    <option value="ashby">Ashby</option>
+                                    <option value="lever">Lever</option>
+                                </select>
+                            </label>
+
+                            <label class="field">
+                                <span class="field-label">
+                                    Board token
+                                    <small>Optional</small>
+                                </span>
+                                <input id="customCompanyToken" type="text" placeholder="examplecorp">
+                            </label>
+
+                            <button id="addCustomCompany" class="button primary">
+                                Add company
+                            </button>
+                        </div>
+
+                        <div id="customCompanyList" class="custom-company-list"></div>
+                    </div>
+
+                    <div class="section-footer">
+                        <button class="button secondary back-button" data-back="profile">
+                            Back
+                        </button>
+                        <button class="button primary next-button" data-next="rules">
+                            Continue to scoring rules
+                        </button>
+                    </div>
+                </section>
+
+                <section id="rules" class="app-section">
+                    <div class="section-intro">
+                        <div>
+                            <p class="eyebrow">STEP 3</p>
+                            <h2>Define what counts as a good job</h2>
+                            <p>
+                                Your existing rules are loaded as defaults. Weighted
+                                terms add points; exclusions remove jobs before scoring.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="threshold-panel">
+                        <label class="field">
+                            <span class="field-label">Possible-match threshold</span>
+                            <input id="minPossibleScore" type="number" min="0" max="200">
+                        </label>
+                        <label class="field">
+                            <span class="field-label">Strong-match threshold</span>
+                            <input id="minStrongScore" type="number" min="0" max="200">
+                        </label>
+                        <button id="resetRules" class="button secondary">
+                            Restore default rules
+                        </button>
+                    </div>
+
+                    <div class="rule-group">
+                        <div class="rule-group-title">
+                            <h3>Weighted scoring terms</h3>
+                            <p>
+                                Only the strongest matching role phrase is counted,
+                                while separate specialty and domain concepts can add
+                                supporting points.
+                            </p>
+                        </div>
+
+                        <details class="rule-card" open>
+                            <summary>
+                                <span>
+                                    <strong>Target role phrases</strong>
+                                    <small>Full role titles and primary career directions</small>
+                                </span>
+                                <span class="summary-count" data-count-for="target_role_phrases"></span>
+                            </summary>
+                            <div class="weighted-editor" data-rule="target_role_phrases"></div>
+                        </details>
+
+                        <details class="rule-card">
+                            <summary>
+                                <span>
+                                    <strong>Title specialty terms</strong>
+                                    <small>Risk, fraud, decisioning, AI governance, and similar title signals</small>
+                                </span>
+                                <span class="summary-count" data-count-for="title_specialty_terms"></span>
+                            </summary>
+                            <div class="weighted-editor" data-rule="title_specialty_terms"></div>
+                        </details>
+
+                        <details class="rule-card">
+                            <summary>
+                                <span>
+                                    <strong>Domain terms</strong>
+                                    <small>Relevant concepts found in job descriptions</small>
+                                </span>
+                                <span class="summary-count" data-count-for="domain_terms"></span>
+                            </summary>
+                            <div class="weighted-editor" data-rule="domain_terms"></div>
+                        </details>
+
+                        <details class="rule-card">
+                            <summary>
+                                <span>
+                                    <strong>Job terms</strong>
+                                    <small>Additional job-description phrases that strengthen relevance</small>
+                                </span>
+                                <span class="summary-count" data-count-for="customer_facing_terms"></span>
+                            </summary>
+                            <div class="weighted-editor" data-rule="customer_facing_terms"></div>
+                        </details>
+                    </div>
+
+                    <div class="rule-group">
+                        <div class="rule-group-title">
+                            <h3>Eligibility and exclusions</h3>
+                            <p>Enter one term per line.</p>
+                        </div>
+
+                        <div class="textarea-grid">
+                            <label class="field">
+                                <span class="field-label">
+                                    Excluded job terms
+                                    <small>
+                                        One title phrase per line. Matching jobs are removed
+                                        before scoring and never enter the dashboard.
+                                    </small>
+                                </span>
+                                <textarea id="excludedJobTerms" rows="16"></textarea>
+                            </label>
+
+                            <label class="field">
+                                <span class="field-label">
+                                    Excluded experience levels
+                                    <small>One normalized level per line</small>
+                                </span>
+                                <textarea id="excludedExperienceLevels" rows="16"></textarea>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="rule-group">
+                        <div class="rule-group-title">
+                            <h3>Location interpretation</h3>
+                            <p>
+                                These phrases determine local, remote, hybrid,
+                                and onsite priority.
+                            </p>
+                        </div>
+
+                        <div class="textarea-grid location">
+                            <label class="field">
+                                <span class="field-label">Local-area terms</span>
+                                <textarea id="localAreaTerms" rows="10"></textarea>
+                            </label>
+                            <label class="field">
+                                <span class="field-label">Remote terms</span>
+                                <textarea id="remoteTerms" rows="10"></textarea>
+                            </label>
+                            <label class="field">
+                                <span class="field-label">Hybrid terms</span>
+                                <textarea id="hybridTerms" rows="10"></textarea>
+                            </label>
+                            <label class="field">
+                                <span class="field-label">Onsite terms</span>
+                                <textarea id="onsiteTerms" rows="10"></textarea>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="section-footer">
+                        <button class="button secondary back-button" data-back="companies">
+                            Back
+                        </button>
+                        <button class="button primary next-button" data-next="run">
+                            Review and run
+                        </button>
+                    </div>
+                </section>
+
+                <section id="run" class="app-section">
+                    <div class="section-intro">
+                        <div>
+                            <p class="eyebrow">STEP 4</p>
+                            <h2>Review the run</h2>
+                            <p>
+                                Collection and deterministic scoring are free.
+                                AI intelligence is optional and uses your own API key.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="run-layout">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <div>
+                                    <h3>Job sources</h3>
+                                    <p>At least one ATS must remain enabled.</p>
+                                </div>
+                            </div>
+
+                            <div class="source-grid">
+                                <label class="toggle-card">
+                                    <input id="sourceGreenhouse" type="checkbox">
+                                    <span class="toggle-ui"></span>
+                                    <span>
+                                        <strong>Greenhouse</strong>
+                                        <small>Public job-board API</small>
+                                    </span>
+                                </label>
+
+                                <label class="toggle-card">
+                                    <input id="sourceAshby" type="checkbox">
+                                    <span class="toggle-ui"></span>
+                                    <span>
+                                        <strong>Ashby</strong>
+                                        <small>Public posting API</small>
+                                    </span>
+                                </label>
+
+                                <label class="toggle-card">
+                                    <input id="sourceLever" type="checkbox">
+                                    <span class="toggle-ui"></span>
+                                    <span>
+                                        <strong>Lever</strong>
+                                        <small>Global public postings API</small>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <div>
+                                    <h3>Intelligence layer</h3>
+                                    <p>
+                                        Local market counts are always generated.
+                                        AI interpretation is optional.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <label class="master-toggle">
+                                <input id="runAi" type="checkbox">
+                                <span class="toggle-ui"></span>
+                                <span>
+                                    <strong>Run AI market intelligence and job coaching</strong>
+                                    <small id="aiToggleHelp">
+                                        Uses the API key configured in .env
+                                    </small>
+                                </span>
+                            </label>
+
+                            <div id="aiOptions" class="ai-options">
+                                <div class="field-grid two">
+                                    <label class="field">
+                                        <span class="field-label">OpenAI model</span>
+                                        <input id="aiModel" type="text" placeholder="gpt-5-mini">
+                                    </label>
+
+                                    <label class="field">
+                                        <span class="field-label">Top jobs to coach</span>
+                                        <input id="topJobs" type="number" min="1" max="20">
+                                    </label>
+                                </div>
+
+                                <label class="check-line">
+                                    <input id="refreshAi" type="checkbox">
+                                    <span>
+                                        Ignore valid AI caches and generate fresh analysis
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <div>
+                                    <h3>Collection behavior</h3>
+                                    <p>
+                                        Normal refreshes reuse confirmed boards and are much faster.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <label class="check-line warning-line">
+                                <input id="forceDiscovery" type="checkbox">
+                                <span>
+                                    Force complete ATS board rediscovery
+                                    <small>
+                                        This can make the run significantly slower.
+                                    </small>
+                                </span>
+                            </label>
+                        </div>
+
+                        <div class="panel summary-panel">
+                            <h3>Run summary</h3>
+                            <dl class="run-summary">
+                                <div>
+                                    <dt>Companies</dt>
+                                    <dd id="summaryCompanies">—</dd>
+                                </div>
+                                <div>
+                                    <dt>Sources</dt>
+                                    <dd id="summarySources">—</dd>
+                                </div>
+                                <div>
+                                    <dt>Match thresholds</dt>
+                                    <dd id="summaryThresholds">—</dd>
+                                </div>
+                                <div>
+                                    <dt>AI</dt>
+                                    <dd id="summaryAi">—</dd>
+                                </div>
+                            </dl>
+
+                            <button id="runButton" class="button primary run-button">
+                                Run job search
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="section-footer">
+                        <button class="button secondary back-button" data-back="rules">
+                            Back
+                        </button>
+                        <span></span>
+                    </div>
+                </section>
+
+                <section id="progress" class="app-section">
+                    <div class="section-intro">
+                        <div>
+                            <p class="eyebrow">STEP 5</p>
+                            <h2>Your search is running locally</h2>
+                            <p>
+                                You can leave this tab open. The Python backend is
+                                collecting, filtering, scoring, and generating reports.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="panel progress-panel">
+                        <div class="progress-heading">
+                            <div>
+                                <span id="progressPercent" class="progress-percent">0%</span>
+                                <h3 id="progressLabel">Ready</h3>
+                            </div>
+                            <button id="stopButton" class="button danger hidden">
+                                Stop run
+                            </button>
+                        </div>
+
+                        <div class="progress-track">
+                            <div id="progressBar" class="progress-bar"></div>
+                        </div>
+
+                        <div class="stage-row">
+                            <span id="runStartedAt">Not started</span>
+                            <span id="runModeLabel">Local deterministic scoring</span>
+                        </div>
+
+                        <pre id="runLogs" class="run-logs">Waiting for a run…</pre>
+                    </div>
+
+                    <div id="runError" class="error-card hidden"></div>
+                </section>
+
+                <section id="results" class="app-section">
+                    <div class="section-intro">
+                        <div>
+                            <p class="eyebrow">STEP 6</p>
+                            <h2>Your results are ready</h2>
+                            <p>
+                                Open either report in a new tab. The job dashboard
+                                remains instant because filtering happens in your browser.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="result-grid">
+                        <article class="result-card">
+                            <div class="result-icon jobs-icon">J</div>
+                            <div>
+                                <p class="eyebrow">DETERMINISTIC RESULTS</p>
+                                <h3>Job Dashboard</h3>
+                                <p>
+                                    Ranked jobs, filters, salary controls, application
+                                    states, saved roles, and score contributors.
+                                </p>
+                            </div>
+                            <a
+                                id="openJobsButton"
+                                class="button primary disabled"
+                                href="#"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                Open jobs
+                            </a>
+                        </article>
+
+                        <article class="result-card">
+                            <div class="result-icon intelligence-icon">AI</div>
+                            <div>
+                                <p class="eyebrow">MARKET AND COACHING</p>
+                                <h3>Job Intelligence</h3>
+                                <p>
+                                    Verified market counts, skill demand, certification
+                                    priorities, gaps, and top-opportunity coaching.
+                                </p>
+                            </div>
+                            <a
+                                id="openIntelligenceButton"
+                                class="button primary disabled"
+                                href="#"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                Open intelligence
+                            </a>
+                        </article>
+                    </div>
+
+                    <div class="panel result-actions">
+                        <div>
+                            <h3>Run another search</h3>
+                            <p>
+                                Your settings remain saved locally. Change any
+                                profile, company, or scoring rule and run again.
+                            </p>
+                        </div>
+                        <button class="button secondary nav-jump" data-section="run">
+                            Return to run settings
+                        </button>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <template id="weightedRowTemplate">
+        <div class="weighted-row">
+            <input class="term-input" type="text" placeholder="Term or phrase">
+            <input class="points-input" type="number" min="-100" max="100" placeholder="Points">
+            <button class="icon-button remove-weighted" type="button" aria-label="Remove term">×</button>
+        </div>
+    </template>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

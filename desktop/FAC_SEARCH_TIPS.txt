@@ -1,0 +1,374 @@
+FAC - JOB TRACKER
+RESUME PREPARATION AND SEARCH TIPS
+==================================
+
+FAC works best when it receives clear, truthful information about your
+experience and the kinds of jobs you actually want. You do not need to
+rewrite your entire resume specifically for FAC, but a few small choices
+can improve both the search results and the optional AI analysis.
+
+
+1. PREPARING YOUR RESUME TEXT
+-----------------------------
+
+Paste the full text of your most complete resume into the Resume Text box.
+
+Plain text is perfect. FAC does not need the original PDF or Word
+formatting.
+
+Include:
+
+- your current and previous job titles;
+- a short professional summary, if you have one;
+- responsibilities that show what you actually did;
+- accomplishments and measurable results;
+- industries and business areas you understand;
+- tools, platforms, programming languages, and technical methods;
+- certifications;
+- education;
+- customer-facing, leadership, research, or project experience that may
+  matter for your target roles.
+
+Strong resume content is specific. For example:
+
+    Built credit-risk models using Python, SQL, and logistic regression.
+
+is more useful than:
+
+    Worked on analytical projects.
+
+And:
+
+    Led technical discovery, demonstrations, and proof-of-concept design
+    for enterprise banking customers.
+
+is more useful than:
+
+    Supported sales.
+
+Use numbers when they are truthful and meaningful, such as:
+
+- revenue or deal size;
+- percentage improvement;
+- number of clients, users, models, or projects;
+- time saved;
+- portfolio size;
+- recovery, conversion, fraud-loss, or performance improvement.
+
+Do not add a skill only because it appears in job descriptions. FAC can
+help identify gaps, but the resume should remain an accurate record of
+your experience.
+
+You may use your longest or "master" resume. It is okay if it contains more
+detail than the shorter version you normally submit with applications.
+
+
+2. WHAT TO PUT IN "DESIRED JOBS"
+--------------------------------
+
+Use this box to describe the roles and career directions you genuinely
+want FAC to prioritize.
+
+You can enter job titles separated by commas or put each one on a new line.
+
+Example:
+
+    Solutions Engineer
+    Solutions Consultant
+    Sales Engineer
+    Technical Consultant
+    Customer Engineer
+
+You can also include closely related specializations:
+
+    AI Solutions Engineer
+    Fraud Solutions Consultant
+    Credit Risk Data Scientist
+    Model Risk Consultant
+    Machine Learning Engineer
+
+Use titles that employers actually use. A quick way to build the list is
+to look at several jobs you would happily apply to and copy the recurring
+job-title language.
+
+Include reasonable title variations. Employers may describe nearly the
+same job as:
+
+    Solutions Engineer
+    Solution Engineer
+    Sales Engineer
+    Presales Engineer
+    Pre-Sales Consultant
+    Solutions Consultant
+
+Do not put every remotely possible job into this box. A focused list
+usually produces clearer results than a list containing unrelated career
+paths.
+
+A good starting range is approximately 5 to 15 related titles.
+
+
+3. DESCRIBING MORE THAN ONE CAREER DIRECTION
+--------------------------------------------
+
+FAC can support more than one direction, but group related searches
+together where possible.
+
+Good combination:
+
+    Solutions Engineer
+    Solutions Consultant
+    Technical Consultant
+    Customer Engineer
+    Solutions Architect
+
+These roles share similar responsibilities.
+
+Broader combination:
+
+    Data Scientist
+    Economist
+    Solutions Engineer
+    Product Manager
+    Technical Writer
+
+This may still be useful, but the scoring rules will need more careful
+adjustment because the roles are not closely related.
+
+When two career directions are very different, consider saving separate
+configurations or running FAC twice with different target terms.
+
+
+4. LOCATION PREFERENCES
+-----------------------
+
+Be specific about what is acceptable.
+
+Example:
+
+    Remote anywhere in the United States. Open to hybrid work within the
+    Raleigh-Durham area. Open to relocation for an exceptional role.
+
+Other useful details may include:
+
+- cities or states you prefer;
+- whether you are open to relocation;
+- whether occasional travel is acceptable;
+- whether fully onsite work is acceptable;
+- whether "remote" must mean remote from your current state;
+- countries or regions where you are authorized to work.
+
+Location preferences guide the optional AI coach. FAC's deterministic
+location handling is controlled separately by the Local-area, Remote,
+Hybrid, and Onsite terms in the scoring settings.
+
+
+5. USING TARGET ROLE PHRASES
+----------------------------
+
+Target Role Phrases are the strongest title signals in FAC.
+
+Use complete job titles or very common title phrases, such as:
+
+    solutions engineer
+    solution consultant
+    sales engineer
+    data scientist
+    economist
+
+Give the highest points to the roles you most want.
+
+Do not add broad words such as:
+
+    manager
+    analyst
+    engineer
+    consultant
+
+by themselves unless you truly want nearly every title containing that
+word. Broad terms can create noisy results.
+
+
+6. USING TITLE SPECIALTY TERMS
+------------------------------
+
+Title Specialty Terms reward important areas that appear directly in the
+job title.
+
+Examples:
+
+    fraud
+    credit risk
+    model risk
+    artificial intelligence
+    machine learning
+    financial services
+    decisioning
+
+These terms help distinguish:
+
+    Solutions Engineer
+
+from:
+
+    Fraud Solutions Engineer
+
+or:
+
+    AI Solutions Engineer
+
+Use specialties that materially increase your interest in a role.
+
+
+7. USING DOMAIN TERMS
+---------------------
+
+Domain Terms look for relevant concepts in the job description.
+
+Examples:
+
+    banking
+    lending
+    underwriting
+    fraud
+    insurance
+    machine learning
+    model governance
+    generative AI
+
+Choose terms that reflect experience you already have or areas you
+seriously want to pursue.
+
+Avoid adding dozens of very general business words. A smaller set of
+meaningful domain terms usually works better.
+
+
+8. USING JOB TERMS
+------------------
+
+Job Terms are additional phrases in the description that make a role more
+attractive or more aligned with how you like to work.
+
+Examples:
+
+    proof of concept
+    discovery
+    demonstration
+    solution design
+    technical sales
+    workshop
+    API integration
+    customer-facing
+    executive presentation
+
+These do not have to be job titles. They describe responsibilities,
+activities, or work styles you want to see.
+
+
+9. USING EXCLUDED JOB TERMS
+---------------------------
+
+Use Excluded Job Terms for jobs you clearly do not want.
+
+Examples:
+
+    intern
+    internship
+    new graduate
+    entry level
+    junior
+    commission only
+
+Be careful with very broad exclusions.
+
+For example, excluding:
+
+    associate
+
+may remove both entry-level roles and legitimate senior titles such as:
+
+    Senior Associate Director
+
+Start with obvious exclusions, review the results, and add more only when
+you see repeated unwanted patterns.
+
+
+10. CHOOSING COMPANIES
+----------------------
+
+The core company list is a good starting point because it keeps collection
+fast.
+
+Enable more companies when:
+
+- your target industry is underrepresented;
+- you are willing to consider smaller or less familiar employers;
+- you want broader market intelligence;
+- you know a company uses Greenhouse, Ashby, or Lever.
+
+Adding every company creates a broader search but can make board discovery
+slower. More companies do not automatically mean better matches.
+
+
+11. SCORE THRESHOLDS
+--------------------
+
+The default thresholds are a reasonable starting point:
+
+    Possible match: 50
+    Strong match:   65
+
+After your first run:
+
+- lower the possible-match threshold slightly if too few plausible jobs
+  appear;
+- raise it if the dashboard contains too much noise;
+- change term weights before making large threshold changes;
+- inspect why high-scoring jobs earned their points.
+
+The score is a prioritization tool, not a verdict. A lower-scoring job may
+still be excellent, and a high-scoring job may contain a requirement that
+makes it unsuitable.
+
+
+12. OPTIONAL AI ANALYSIS
+------------------------
+
+AI analysis is optional.
+
+When enabled, FAC may use your resume text, preferences, and selected job
+information to generate:
+
+- market interpretation;
+- likely strengths;
+- possible gaps;
+- certification priorities;
+- interview preparation;
+- recommendations for the most relevant resume version.
+
+AI analysis does not replace the deterministic score. It is a separate
+interpretation layer and may make mistakes.
+
+Review all generated guidance before changing a resume, preparing an
+application, or making a career decision.
+
+
+13. A SIMPLE FIRST-RUN RECIPE
+-----------------------------
+
+For a useful first run:
+
+1. Paste your complete, truthful master resume.
+2. Add 5 to 15 related desired job titles.
+3. State your location and work-arrangement preferences clearly.
+4. Keep the default core company list.
+5. Review the default role, specialty, domain, and job terms.
+6. Remove terms that do not fit you.
+7. Add a few highly relevant terms rather than dozens of broad keywords.
+8. Keep AI off for the first run if you only want to test collection and
+   scoring.
+9. Review the dashboard.
+10. Adjust weights and exclusions based on the jobs you actually see.
+
+FAC improves through iteration. The first configuration does not need to
+be perfect.

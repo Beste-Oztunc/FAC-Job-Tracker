@@ -1,0 +1,139 @@
+FAC - JOB TRACKER CORE EDITION
+QUICK START
+================================
+
+The Core edition uses two main scripts:
+
+    collect_all_ats.py
+    job_agent.py
+
+Run them in this order.
+
+
+1. ACTIVATE THE VIRTUAL ENVIRONMENT
+-----------------------------------
+
+Mac:
+
+    source .venv/bin/activate
+
+Windows:
+
+    .venv\Scripts\activate
+
+
+2. RUN THE ATS COLLECTOR FIRST
+------------------------------
+
+Run:
+
+    python collect_all_ats.py
+
+This script:
+
+- collects public jobs from the enabled Greenhouse, Ashby, and Lever boards;
+- removes excluded and entry-level jobs;
+- applies FAC's deterministic scoring rules;
+- saves caches and history;
+- creates the main local job dashboard.
+
+The main dashboard is written to:
+
+    output/all_ats_job_dashboard.html
+
+Open that HTML file in a browser to review the results.
+
+
+3. RUN THE AGENT ONLY WHEN WANTED
+---------------------------------
+
+After the ATS collector finishes, you may run:
+
+    python job_agent.py
+
+The agent uses the collected and scored job results. It should not be run
+before the ATS collector has created or refreshed the job data.
+
+The agent creates:
+
+    output/job_intelligence.html
+
+This report may include:
+
+- verified local job-market statistics;
+- optional AI market interpretation;
+- opportunity coaching;
+- skill and certification suggestions;
+- interview preparation for selected jobs.
+
+The ATS dashboard works without the agent.
+
+
+4. RUNNING WITHOUT AI
+---------------------
+
+To create the intelligence report without any OpenAI request or API cost,
+run:
+
+    python job_agent.py --no-ai
+
+This keeps the verified statistics and other local analysis while skipping
+AI-generated interpretation.
+
+
+5. RUNNING WITH OPTIONAL AI
+---------------------------
+
+To use AI features, create a file named:
+
+    .env
+
+inside the Core folder with:
+
+    # FAC: Fully Automated Candidate
+    # The unofficial expansion is left as an exercise for the reader.
+    # FAC_ORIGIN=RnVjayBBbGwgQ29ycG9yYXRpb25z
+
+    OPENAI_API_KEY=your_key_here
+    OPENAI_MODEL=gpt-5-mini
+
+Never share or commit a real .env file.
+
+Then run:
+
+    python job_agent.py
+
+To force fresh AI analysis instead of reusing cached results:
+
+    python job_agent.py --refresh-ai
+
+To analyze a different number of top jobs:
+
+    python job_agent.py --refresh-ai --top 20
+
+
+6. NORMAL REPEAT WORKFLOW
+-------------------------
+
+For a normal updated job search:
+
+    python collect_all_ats.py
+    python job_agent.py
+
+The first command refreshes the jobs.
+
+The second command is optional and refreshes the intelligence report.
+
+
+7. IMPORTANT
+------------
+
+Always run:
+
+    collect_all_ats.py
+
+before:
+
+    job_agent.py
+
+when you want the agent to use the newest job results.

@@ -1,0 +1,46 @@
+THIRD-PARTY NOTICES
+FAC - Job Tracker
+Updated July 24, 2026
+
+FAC - Job Tracker's original project code is governed by LICENSE.txt.
+
+The application installs and uses third-party Python packages. Those
+packages are not relicensed under the FAC license. They remain governed
+by their respective licenses and copyright notices.
+
+The installer retrieves dependencies from Python package repositories
+rather than embedding them in the downloadable source archive. Installed
+versions may also install transitive dependencies governed by additional
+licenses. Users and distributors should review the metadata and license
+files included with the versions actually installed.
+
+Directly used projects:
+
+1. FastAPI
+   License: MIT
+   Copyright: Copyright (c) 2018 Sebastián Ramírez
+   Full text: third_party_licenses/FastAPI-MIT.txt
+
+2. Uvicorn
+   License: BSD 3-Clause
+   Copyright: Copyright © 2017-present, Encode OSS Ltd.
+   Full text: third_party_licenses/Uvicorn-BSD-3-Clause.txt
+
+3. Requests
+   License: Apache License 2.0
+   Copyright and contributor information are maintained by the
+   Requests project and Python Software Foundation community.
+   Full text: third_party_licenses/Requests-Apache-2.0.txt
+
+4. Pydantic
+   License: MIT
+   Copyright: Copyright (c) 2017 to present Pydantic Services Inc.
+   and individual contributors.
+   Full text: third_party_licenses/Pydantic-MIT.txt
+
+No endorsement by these projects or their contributors is implied.
+
+FAC - Job Tracker also communicates with third-party job-board and AI
+services when a user enables those functions. Access to those services is
+governed separately by each service's applicable terms, policies, and
+API requirements.

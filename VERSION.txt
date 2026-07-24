@@ -1,0 +1,9 @@
+FAC - Job Tracker
+Version: 1.9.0
+
+Editions:
+- Core
+- Desktop
+
+Both editions share the same job collection, filtering, scoring, and
+optional intelligence foundation.

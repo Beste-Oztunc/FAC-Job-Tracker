@@ -1,0 +1,148 @@
+FAC JOB SEEKER COMMUNITY LICENSE
+Version 1.0 — July 24, 2026
+
+Copyright © 2026 Beste Cansu Öztunç
+
+WHY THIS LICENSE EXISTS
+
+FAC was made to help people find work, not to become another tool used
+against them.
+
+If you are an individual job seeker, this License is intentionally simple:
+you may use FAC, study it, change it, fork it, self-host it, and share it
+with other job seekers. You do not owe a fee and do not need to ask for
+permission.
+
+The restriction is aimed at corporate exploitation. Companies and other
+organizations may not take FAC, rebrand it, commercialize it, incorporate
+it into their products, or use it to recruit, screen, rank, evaluate, or
+manage candidates without prior written permission.
+
+The terms below put that principle into effect.
+
+1. WHO MAY USE FAC FREELY
+
+A natural person may use, copy, study, modify, fork, and privately
+self-host FAC for that person's own employment search.
+
+A natural person may also, without charge:
+
+- help another individual job seeker use FAC;
+- share an original or modified copy with other individual job seekers;
+- publish a fork for individual job seekers;
+- contribute improvements, documentation, integrations, or translations;
+- adapt FAC to that person's own workflow, computer, location, industry,
+  accessibility needs, or job-search preferences; and
+- use FAC for personal learning, research, experimentation, or portfolio
+  work that is not performed for an organization.
+
+It does not matter where the person works. Someone employed by an HR,
+recruiting, staffing, or technology company may still use FAC for that
+person's own job search. Their employer receives no rights from that
+personal use.
+
+2. SHARING AND FORKS
+
+You may share FAC or a modified version with other individual job seekers
+as long as you:
+
+- include this License;
+- keep the copyright and attribution notices;
+- say when you made significant changes; and
+- provide the source code for the version you share.
+
+Shared versions must remain available to individual job seekers under
+this same License. You may not place a shared version behind a fee,
+subscription, advertisement, or other payment requirement.
+
+These conditions are meant to keep improvements available to the same
+community that FAC was built to help.
+
+3. WHAT COMPANIES AND ORGANIZATIONS MAY NOT DO
+
+Without prior written permission from the copyright owner, a company,
+employer, recruiting firm, staffing agency, HR department, talent team,
+job board, HR-technology provider, consultancy, outplacement provider,
+career-services business, or other organization may not:
+
+- use FAC for organizational operations;
+- use FAC to recruit, source, contact, screen, rank, score, evaluate,
+  recommend, monitor, or manage candidates or workers;
+- use FAC to make or support decisions about another person's employment,
+  compensation, promotion, performance, eligibility, or access to
+  opportunity;
+- offer FAC as a product, service, hosted tool, subscription, or paid
+  feature;
+- sell, sublicense, rebrand, white-label, or commercially redistribute FAC;
+- copy FAC's source code, interface implementation, scoring logic, company
+  registry, or documentation into another product or service;
+- use FAC to build, train, evaluate, or improve a competing commercial
+  product; or
+- remove or misrepresent FAC's authorship, copyright, or license notices.
+
+An organization that would like to use or support FAC may ask for written
+permission. Permission may be granted for free, and public-interest,
+research, accessibility, or nonprofit uses may be considered individually.
+
+4. INDIVIDUALS MAY NOT ACT AS A CORPORATE PROXY
+
+The individual permissions in Section 1 do not apply when a person is
+acting for, at the direction of, or primarily for the benefit of an
+organization.
+
+For example, an employee may use FAC to find a new job for themselves,
+but may not use their personal copy to screen applicants for their
+employer.
+
+5. USER DATA AND OUTPUTS
+
+FAC does not claim ownership of a user's resume, personal information,
+search preferences, application history, API key, or other content that
+the user provides.
+
+To the extent permitted by law, the copyright owner does not claim
+ownership of reports or other outputs generated solely from a user's own
+content and public job-posting data. Third-party content remains subject
+to the rights and terms that apply to it.
+
+6. FAC'S NAME AND IDENTITY
+
+You may accurately say that your copy or fork is based on FAC.
+
+You may not use the name "FAC - Job Tracker", its logo, or other project
+identity in a way that falsely suggests that a modified version is
+official, endorsed, or maintained by the original project.
+
+7. WHEN PERMISSION ENDS
+
+Your permission under this License ends automatically if you violate its
+terms.
+
+For a first, unintentional violation, permission is restored when the
+violation is fully corrected within thirty days after you discover it or
+receive notice of it.
+
+Intentional, repeated, or uncorrected violations are not automatically
+excused.
+
+8. NO WARRANTY
+
+FAC is provided free of charge, "as is", without warranties.
+
+FAC may miss jobs, include outdated postings, produce incorrect scores,
+experience interruptions, or generate imperfect analysis. You are
+responsible for reviewing job postings, application materials, AI
+analysis, and API charges before relying on them.
+
+To the maximum extent permitted by law, the copyright owner is not liable
+for lost opportunities, lost income, lost data, API charges, or other
+damages arising from the use of FAC.
+
+9. OTHER USES
+
+Any use not allowed by this License requires prior written permission from
+the copyright owner.
+
+This License is source-available and community-oriented, but it is not an
+Open Source Initiative approved open-source license because it limits
+organizational and field-of-use rights.

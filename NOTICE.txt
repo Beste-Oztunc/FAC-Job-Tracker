@@ -1,0 +1,8 @@
+FAC - Job Tracker
+
+Copyright © 2026 Beste Cansu Öztunç
+
+Project version: 1.9.0
+
+FAC is made available under the FAC Job Seeker Community License.
+See LICENSE.txt for permissions and restrictions.
