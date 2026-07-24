@@ -1,7 +1,7 @@
 # FAC - Job Tracker
 
-FAC started as a project to keep me busy—and hopefully do something useful
-with my time—after I was laid off.
+FAC started as a project to keep me busy and hopefully do something useful
+with my time after I was laid off.
 
 Publicly, FAC stands for **Fully Automated Candidate**. The idea is simple:
 if corporations use applicant tracking systems to collect, filter, and
@@ -34,7 +34,7 @@ Standalone Python scripts for people who prefer direct control.
 A guided local browser interface with Mac and Windows installation tools.
 
 Both editions are included in this repository and use project version
-**1.9.0**.
+**4.7**.
 
 ## Local-first design
 
