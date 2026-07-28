@@ -1,10 +1,7 @@
 # FAC - Job Tracker
 
-FAC started as a project to keep me busy and hopefully do something useful
-with my time after I was laid off.
-
-Publicly, FAC stands for **Fully Automated Candidate**. The idea is simple:
-if corporations use applicant tracking systems to collect, filter, and
+FAC stands for **Fully Automated Candidate**. If
+corporations use applicant tracking systems to collect, filter, and
 track candidates, job seekers should be able to use automation too.
 
 FAC collects public job postings, removes obvious noise, scores
